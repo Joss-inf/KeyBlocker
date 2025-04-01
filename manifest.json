@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Formation Blocker",
+    "name": "Key Blocker",
     "version": "1.0",
-    "description": "Bloque les offres parasites sur les joabBoards pris en charge ",
+    "description": "Bloque les offres parasites via une liste de mot clés sur les JoabBoards pris en charge ",
     "permissions": ["storage", "scripting", "activeTab"],
     "host_permissions": [
       "http://*/*",
@@ -11,6 +11,7 @@
     "action": {
       "default_popup": "./app/views/popup.html",
       "default_icon": {
+        "32":"./assets/images/icon/icon32.png",
         "128":"./assets/images/icon/icon128.png"
       }
     },
@@ -20,7 +21,7 @@
           "http://*/*",
           "https://*/*"
         ],
-        "js": ["./app/script/worker/blocker.js"],
+        "js": ["./app/script/workers/blocker.js"],
         "run_at": "document_end"
       }
     ]
