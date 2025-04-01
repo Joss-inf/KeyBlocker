@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Formation Blocker",
+    "version": "1.0",
+    "description": "Bloque les offres parasites sur les joabBoards pris en charge ",
+    "permissions": ["storage", "scripting", "activeTab"],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "action": {
+      "default_popup": "./app/views/popup.html",
+      "default_icon": {
+        "128":"./assets/images/icon/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "js": ["./app/script/worker/blocker.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
