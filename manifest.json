@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Formation Blocker",
     "version": "1.0",
-    "description": "Bloque les offres parasites sur les joabBoards pris en charge ",
+    "description": "Bloque les mots clés parasites sur les joabBoards pris en charge ",
     "permissions": ["storage", "scripting", "activeTab"],
     "host_permissions": [
       "http://*/*",
@@ -20,8 +20,8 @@
           "http://*/*",
           "https://*/*"
         ],
-        "js": ["./app/script/worker/blocker.js"],
-        "run_at": "document_end"
+        "js": ["./app/script/workers/service_blocker.js"],
+        "run_at": "document_idle"
       }
     ]
   }
