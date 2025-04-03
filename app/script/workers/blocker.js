@@ -47,7 +47,7 @@ removeNode(bfsFilteredLeaves(document.body, searchWords,ignoredTags),2)
 
 
 // //  Afficher les résultats
-// console.log(`🔍 ${resultNodes.length} nœud(s) trouvé(s) respectant la condition :`);
+// console.log(` ${resultNodes.length} nœud(s) trouvé(s) respectant la condition :`);
 // resultNodes.forEach((node, index) => {
 //     console.log(` Résultat ${index + 1}:`);
 //     console.log("    ID:", node.parentNode.id || "Pas d'ID");
