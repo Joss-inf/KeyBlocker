@@ -7,19 +7,26 @@
 body { 
     font-family: "Figtree", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     border-radius: 10px;
-   
-   
-    
     gap: 5px;
     background-color: aliceblue;
+    scrollbar-color:rgb(179, 203, 217) rgba(152, 194, 218, 0.338);
+}
+::-webkit-scrollbar{
+  background-color: rgba(152, 194, 218, 0.338);
+  border-radius: 0px 5px 5px 0px;
+  
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(152, 194, 218, 0.338);
+  border-radius:10px;
 }
 .title{
    width: 100%;
@@ -39,14 +46,36 @@ body {
 .toggle{
     margin-top: 40px;
 }
-.keyword-item { 
-   
-    
+
+
+.keyslist{
+  width: 80%;
+  max-height: 200px;
+  overflow-y: scroll;
+  gap: 4px;
+
+  border:dashed;
+  border-width: 1px;
+  border-color:rgb(179, 203, 217); 
+  border-radius: 5px;
+
+  
+}
+.keyword{
+  padding: 3px;
+  border-color:rgb(179, 203, 217); 
+  width:auto;
+  border-bottom:solid ;
+  border-width:1.5px ;
+  border-color: rgb(179, 203, 217);
+  display: flex;
+  justify-content: space-between;
 }
 .remove-btn { 
     background: rgba(255, 0, 0, 0.086); 
     color: white; border: none; 
-    cursor: pointer; }
+    cursor: pointer; 
+  }
    
 
 .input{
@@ -62,7 +91,32 @@ button{
     border-radius: 4px;
     padding: 3px;
     border-color: rgb(205, 226, 244);
+    cursor: pointer;
 } 
+button:hover{
+  transform: scale(1.1);
+
+}
+button:active{
+  transform: scale(1)
+}
+.button-a{
+  height:22px;
+  width: 22px;
+  background-size: contain;
+  background-position: center;
+  border: none;
+}
+.button-a.x {
+  background-image: url('../../assets/images/cross.png');
+  margin-right: 4px;
+}
+
+.button-a.v {
+  background-image: url('../../assets/images/check.png');
+}
+
+
 /*toggle switch start*/
 
 #checkbox {
@@ -109,7 +163,7 @@ button{
 /* input keyword start */
   .input {
     max-width: 190px;
-    height: 44px;
+    height: 20px;
     background-color: rgb(205, 226, 244);
     border-radius: .5rem;
     padding: 0 1rem;
@@ -138,10 +192,10 @@ button{
   }
   
   .input-group:hover .label, .input:focus {
-    color: #05060fc2;
+    color: #1f2937d6;
   }
 
-  .button{
+  .button-b{
     padding: 10px;
     margin: 5px;
   }
