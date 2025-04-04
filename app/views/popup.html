@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/styles/popup.css">
-    <title>Formation Blocker</title>
+    <title>keyBlocker</title>
 </head>
 <body>
     <div class = "title">
-        <h3>Formation Blocker</h3>
+        <h3>KeyBlocker</h3>
     </div>
     <input id="checkbox" type="checkbox" />
 <label class="switch" for="checkbox">
@@ -23,13 +23,26 @@
 </label>
 
     <h4>Mots-clés bloqués</h4>
-    <ul id="keywordsList"></ul>
+    <div class = "keyslist" id="keywordsList">
+    <div class ="keyword">mot<div><button class="button-a x"></button><button class="button-a v" ></button></div></div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+    <div class ="keyword">mot</div>
+  </div>
     
     <div class="input-group">
       <label class="label">Mot à bloquer</label>
       <input autocomplete="off" name="Email" id="newKeyword" class="input" type="text">
     </div>
-    <button class ="button" id="addKeyword">Ajouter</button>
+    <button class ="button-b" id="addKeyword">Ajouter</button>
     <p>Éléments bloqués : <span id="blockedCount">0</span></p>
 
     <script src="../script/background/popup.js"></script>
