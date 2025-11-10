@@ -1,0 +1,270 @@
+/* === THEME VARIABLES === */
+:root {
+    /* Couleurs de base */
+    --bg-color: #f3f4f5;
+    --text-color: #1f4772;
+    --text-color-light: #143f6d; /* NOUVEAU: Couleur de texte principale plus douce */
+    --primary-color: #175597;
+    --danger-color: #fb184d;
+    --border-color: #d6d9e9;
+    /* Ombres plus prononcées */
+    --shadow-light: rgba(255, 255, 255, 0.384);
+    --shadow-dark: rgb(127, 155, 179);
+    /* Police */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+/* === GENERAL STYLES === */
+body {
+    font-family: var(--font-family);
+    width: 350px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color-light); /* Utiliser la nouvelle couleur de texte par défaut */
+    overflow-x: hidden;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* NOUVEAU: Style pour le header (le conteneur du titre) */
+.header {
+    text-align: center;
+    margin-bottom: 30px; /* Plus d'espace après le titre */
+}
+/* === HEADER & TITLE === */
+h1 {
+    font-size: 1.8em; /* Plus grand pour plus d'impact */
+    font-weight: 800; /* Plus gras */
+    margin: 0;
+    color: white; /* Couleur de base pour l'effet de gravure */
+    text-shadow: 1px 1px 1px var(--shadow-light), 
+                 -5px -1px 6px var(--shadow-dark); /* Ombres inversées pour l'effet creusé */
+    letter-spacing: 1px; /* Espacement des lettres */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+    padding-bottom: 10px; /* Espace pour le sous-titre */
+    
+}
+
+/* === SECTIONS === */
+.settings-section, .input-section {
+    margin-bottom: 10px;
+   
+}
+
+/* === SLIDER SECTION (CORRIGÉ) === */
+.settings-section {
+    padding-bottom: 10px;
+}
+
+.settings-section label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* NOUVEAU: Wrapper pour le slider et sa valeur afin de corriger le chevauchement */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Augmenter l'espace */
+}
+
+#parentDepthValue {
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    padding: 8px 12px;
+    border-radius: 10px;
+    min-width: 44px; /* S'assurer qu'il y a assez de place pour 2 chiffres */
+    text-align: center;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    flex-shrink: 0; /* Empêche le champ de se rétrécir */
+}
+
+/* Customizing the slider */
+#parentDepthSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%; /* Le slider prend le reste de la place */
+    height: 10px;
+    background: var(--bg-color);
+    outline: none;
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+}
+
+#parentDepthSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+    box-shadow: 2px 2px 5px var(--shadow-dark), 
+                -3px -3px 6px var(--shadow-light);
+}
+
+#parentDepthSlider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+    box-shadow: 2px 2px 5px var(--shadow-dark), 
+                -3px -3px 6px var(--shadow-light);
+}
+
+
+/* === INPUT SECTION (CORRIGÉ) === */
+.input-section {
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Aligner les éléments verticalement */
+}
+
+#newWordInput {
+    flex-grow: 1; /* Prend l'espace disponible */
+    padding: 12px 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1em;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#newWordInput:focus {
+    outline: none;
+    box-shadow: inset 1px 1px 2px var(--shadow-dark), 
+                inset -1px -1px 2px var(--shadow-light),
+                0 0 0 3px rgba(0, 123, 255, 0.5); /* Auréole de focus plus visible */
+}
+
+#addWordButton {
+    padding: 12px 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px var(--shadow-dark), 
+                -5px -5px 10px var(--shadow-light);
+    transition: all 0.15s ease-in-out;
+    flex-shrink: 0; /* Empêche le bouton de se rétrécir */
+}
+
+#addWordButton:hover {
+    filter: brightness(1.1);
+}
+
+#addWordButton:active {
+    box-shadow: inset 2px 2px 5px #0056b3, 
+                inset -3px -3px 7px #009cff;
+    transform: translateY(1px);
+    filter: brightness(1);
+}
+
+
+/* === WORD LIST SECTION === */
+#wordList {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    height: 300px;
+    overflow-y: auto;
+    background: var(--bg-color);
+    border-radius: 12px 12px 4px 4px; /* Coins arrondis asymétriques */
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+}
+
+/* Custom scrollbar */
+#wordList::-webkit-scrollbar {
+  width: 10px;
+}
+#wordList::-webkit-scrollbar-track {
+  background: transparent;
+}
+#wordList::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+  border: 3px solid var(--bg-color);
+}
+
+
+#wordList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px var(--shadow-dark), 
+                -4px -4px 8px var(--shadow-light);
+    word-break: break-all; /* Empêche les mots longs de déborder */
+}
+#wordList li:last-child {
+    margin-bottom: 0;
+}
+
+.remove-button {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 6px 10px;
+    margin-left: 10px; /* Espace entre le mot et le bouton */
+    box-shadow: 2px 2px 4px var(--shadow-dark), 
+                -2px -2px 4px var(--shadow-light);
+    flex-shrink: 0;
+}
+
+.remove-button:hover {
+    filter: brightness(1.1);
+}
+
+.remove-button:active {
+     box-shadow: inset 1px 1px 3px #bf2b36;
+     transform: translateY(1px);
+     filter: brightness(1);
+}
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+
+.item-enter {
+    animation: fadeInSlideDown 0.15s ease-out forwards;
+}
+
+/* Animation pour la suppression d'un élément */
+@keyframes fadeOutSlideUp {
+    from {
+        opacity: 1;
+    }
+    to { 
+        opacity: 0;
+    }
+}
+
+.item-exit {
+    animation: fadeOutSlideUp 0.1s ease-out forwards;
+}
